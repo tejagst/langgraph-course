@@ -1,5 +1,5 @@
 [project]
-name = "reflection-agent"
+name = "app"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
@@ -12,13 +12,14 @@ dependencies = [
     "isort>=9.0.2",
     "langchain>=1.4.4",
     "langchain-openai>=1.7.0",
+    "langchain-tavily>=0.2.18",
     "langgraph>=1.2.14",
     "python-dotenv>=1.2.4",
 ]
 
-[project.scripts]
-reflection-agent = "reflection_agent:main"
+#[project.scripts]
+#reflection-agent = "reflection_agent:main"
 
-[build-system]
-requires = ["uv_build>=0.12.21,<0.13.0"]
-build-backend = "uv_build"
+#[build-system]
+#requires = ["uv_build>=0.12.21,<0.13.0"]
+#build-backend = "uv_build"
