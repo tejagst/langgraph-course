@@ -45,5 +45,18 @@ graph = builder.compile()
 print(graph.get_graph().draw_mermaid())
 
 
-if __name__ == "__main__":
-    print("Hello Reflexion")
+res = graph.invoke(
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Write about AI-Powered SOC / autonomous soc problem domain, list startups that do that and raised capital.",
+            }
+        ]
+    }
+)
+# Extract the final answer from the last message with tool calls
+last_message = res["messages"][-1]
+if isinstance(last_message, AIMessage) and last_message.tool_calls:
+    print(last_message.tool_calls[0]["args"]["answer"])
+print(res)
